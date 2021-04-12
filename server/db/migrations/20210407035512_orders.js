@@ -1,10 +1,12 @@
 
-
-exports.up = function(knex) {
+exports.up = (knex) => {
+    return knex.schema.createTable('orders', table => {
+        table.increments('id').primary()
+        table.string('title') 
+    })
+  }
   
-}
-
-exports.down = function(knex) {
+  exports.down = (knex) => {
+    return knex.schema.dropTable('orders')
+  }
   
-}
-
