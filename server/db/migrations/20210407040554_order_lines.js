@@ -1,5 +1,3 @@
-const { default: knex } = require("knex")
-
 
 exports.up = (knex) => {
     return knex.schema.createTable('order_lines', table => {
@@ -7,7 +5,6 @@ exports.up = (knex) => {
         table.integer('product_id')
         table.integer('order_id')
         table.integer('quantity')
-
     })
   }
 
