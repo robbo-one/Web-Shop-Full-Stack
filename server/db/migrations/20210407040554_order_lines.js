@@ -1,6 +1,6 @@
 
 exports.up = (knex) => {
-    return knex.schema.createTable('order_lines', table => {
+    return knex.schema.createTable('order_lines', (table) => {
         table.increments('id').primary()
         table.integer('product_id')
         table.integer('order_id')

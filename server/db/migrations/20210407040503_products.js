@@ -1,6 +1,6 @@
 
 exports.up = (knex) => {
-  return knex.schema.createTable('products', table => {
+  return knex.schema.createTable('products', (table) => {
       table.increments('id').primary()
       table.string('title') 
       table.string('description', 5000) // max characters increased to 5000
@@ -11,3 +11,4 @@ exports.up = (knex) => {
 exports.down = (knex) => {
   return knex.schema.dropTable('products')
 }
+ 
