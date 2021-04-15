@@ -7,7 +7,34 @@ fs.createReadStream(path.join(__dirname, 'sample_products.csv'))
   .pipe(csv())
   .on('data', (data) => results.push(data))
   .on('end', () => {
-    console.log(results);
+    const products = results.filter(p => {
+      return p.Type == 'simple'
+    }).map(p => {
+      let id = Number(Object.values(p)[0])
+        return {
+          title: p.Name, 
+          description: p.Description,
+          image: p.Images,
+        }
+    })
+
+
+    // const products = results.filter(p => {
+//       return p.Type == 'simple'
+//     }).map(p => {
+//       let id = Number(Object.values(p)[0])
+//       return {
+//         id: id,
+//         title: p.Name,
+//         description: p.Description,
+//         image: p.Images,
+//       }
+//     })
+  
+    
+    
+    
+    console.log(products);
     // [
     //   { NAME: 'Daffy Duck', AGE: '24' },
     //   { NAME: 'Bugs Bunny', AGE: '22' }
