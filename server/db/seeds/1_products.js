@@ -18,23 +18,11 @@ fs.createReadStream(path.join(__dirname, 'sample_products.csv'))
         }
     })
 
+    fs.writeFile(path.join(__dirname, 'products.json'), JSON.stringify(products, null, 4), () => { //null, 4 will indent ewvery level by 4 spaces
+console.log('all done')  
+    })  
 
-    // const products = results.filter(p => {
-//       return p.Type == 'simple'
-//     }).map(p => {
-//       let id = Number(Object.values(p)[0])
-//       return {
-//         id: id,
-//         title: p.Name,
-//         description: p.Description,
-//         image: p.Images,
-//       }
-//     })
-  
-    
-    
-    
-    console.log(products);
+    //console.log(products);
     // [
     //   { NAME: 'Daffy Duck', AGE: '24' },
     //   { NAME: 'Bugs Bunny', AGE: '22' }
