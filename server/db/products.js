@@ -8,3 +8,4 @@ function getProducts(db = connection) {
 module.exports = {
     getProducts,
 }
+
