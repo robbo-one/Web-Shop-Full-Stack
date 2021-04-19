@@ -1,8 +1,8 @@
 
 exports.up = (knex) => {
-    return knex.schema.createTable('orders', table => {
-        table.increments('id').primary()
-        table.string('order_code') 
+    return knex.schema.createTable('orders', (table) => {
+      table.increments('id').primary()
+      table.string('order_code') 
     })
   }
   
