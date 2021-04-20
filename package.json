@@ -58,7 +58,7 @@
   },
   "scripts": {
     "dev": "run-p dev:client dev:server",
-    "dev:client": "webpack --config ./client/webpack.config.js",
+    "dev:client": "webpack --config ./client/webpack.config.js --watch",
     "dev:server": "nodemon server",
     "knex": "knex --knexfile ./server/db/knexfile.js",
     "test": "echo \"Error: no test specified\" && exit 1",
